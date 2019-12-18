@@ -5,6 +5,8 @@
 #ifndef MATALA3FIND_FIND_H
 #define MATALA3FIND_FIND_H
 
+#define WORD 30
+
 int getLine(char s[]);
 
 int getword(char w[]);

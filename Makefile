@@ -1,27 +1,36 @@
+
 CC=gcc
-OBJECTS_MAIN_SORT=sort.o sortmain.o
-OBJECTS_MAIN_TXT_FIND=find.o main.o
-FLAGS= -Wall -g -fPIC
-PROGRAMS= sortmain main
-isort txtfind
+AR=ar
+FLAGS= -Wall -g
+
+all: mysort isort myfind txtfind
 
 
-all: $(PROGRAMS)
-isort: $(OBJECTS_MAIN_SORT)
-	$(CC) $(FLAGS) -o sortmain $(OBJECTS_MAIN_SORT) -lm
-sort.o: sort.c sort.h
-	$(CC) $(FLAGS) -c iSortUtils.c
-isort.o: sortmain.c sort.h
-	$(CC) $(FLAGS) -c sortmain.c
-
-
-txtfind: $(OBJECTS_MAIN_TXT_FIND)
-	$(CC) $(FLAGS) -o txtfind $(OBJECTS_MAIN_TXT_FIND) -lm
+txtfind: main.o myfind
+	$(CC) $(FLAGS) -o txtfind main.o libmyFind.a
+myfind: libmyFind.a
+libmyFind.a: find.o
+	$(AR) -rcs libmyFind.a texter.o
 find.o: find.c find.h
 	$(CC) $(FLAGS) -c find.c
-txtfind.o: main.c find.h
-	$(CC) $(FLAGS) -c main.c
-.PHONY: clean all
+main.o: main.c find.h
+	$(CC) $(FLAGS) -c main.c -o main.o
+
+
+
+
+
+isort: sortmain.o mysort
+	$(CC) $(FLAGS) -o isort sortmain.o libmySort.a
+mysort: libmySort.a
+libmySort.a: sort.o
+	$(AR) -rcs libmySort.a sort.o
+sort.o: sort.c sort.h
+	$(CC) $(FLAGS) -c sort.c
+sortmain.o: sortmain.c sort.h
+	$(CC) $(FLAGS) -c sortmain.c -o sortmain.o
+
+.PHONY: clean all mysort myfind
 
 clean:
-	rm -f *.o *.so $(PROGRAMS)
+	rm -f *.o *.a *.so isort txtfind)

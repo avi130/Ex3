@@ -6,11 +6,11 @@
 
 
 
-static int arr[50]={0};
+//static int arr[50]={0};
 
 void shift_element(int *arr,int i ){
 
-    int index= 4*i;
+
     arr=arr+i;
     for (int x = 0; x < i; x++)
     {

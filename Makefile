@@ -10,7 +10,7 @@ txtfind: main.o myfind
 	$(CC) $(FLAGS) -o txtfind main.o libmyFind.a
 myfind: libmyFind.a
 libmyFind.a: find.o
-	$(AR) -rcs libmyFind.a texter.o
+	$(AR) -rcs libmyFind.a find.o
 find.o: find.c find.h
 	$(CC) $(FLAGS) -c find.c
 main.o: main.c find.h
@@ -32,4 +32,3 @@ sortmain.o: sortmain.c sort.h
 
 clean:
 	rm -f *.o *.a *.so isort txtfind)
-	

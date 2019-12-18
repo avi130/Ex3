@@ -114,6 +114,7 @@ int similar(char *str1, char *str2, int n)
 
 void print_lines(char *str)
 {
+    /*
     int issimilar;
     char compareword [256];
     int comparsize=0;
@@ -154,6 +155,27 @@ void print_lines(char *str)
         strcpy(compareword,newline);
         linecounter++;
     }
+     */
+    char s[LINE];
+    char w[WORD];
+    fgets(s, LINE , stdin); // to skip the second line
+    while( fgets(s, LINE , stdin)){
+        int j=0;
+        for(int i = 0 ; i < LINE && s[i] != '\n' ; i++){
+            if( s[i] != ' ' && s[i] != '\n' && s[i] != '\t' && s[i] != '\0'){
+                w[j] = s[i];
+                j++;
+            }
+            else {
+                if(substring(w,str)){
+                    printf("%s",s);
+                    break;
+                }
+                j=0;
+            }
+        }
+    }
+    
 }
 
 
@@ -204,10 +226,8 @@ void print_similar_words(char *str)
     char w[WORD];
     fgets(s, LINE , stdin);
     while( fgets(s, LINE , stdin)){
-        //printf("s is  :%s..\n",s); //test for me
-        int j=0;
         int lenline = strlen(s);
-        //printf("len is  : %d\n",lenline);
+        int j=0;
         for(int i = 0 ; i < lenline  ; i++){
             if( s[i] != ' ' && s[i] != '\n' && s[i] != '\t' && s[i] != '\0'){
                 w[j] = s[i];
@@ -215,8 +235,6 @@ void print_similar_words(char *str)
 
             }
             else{
-                //printf("the word  : %s\n",w); //test for me
-               // printf("similiar is?  : %d\n",similar(w, str , 1)); //test for me
                 char *temp = w;
                 if (similar(w, str , 1)){
                     printf("%s\n",temp);

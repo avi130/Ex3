@@ -29,6 +29,7 @@ int main() {
     char line[LINE];
     char w[WORD];
     fgets(line,LINE , stdin);
+    printf("%s",line);
     int j = 0;
     int i = 0;
     for( i = 0 ; i<LINE ; i++){
@@ -40,6 +41,7 @@ int main() {
             j++;
         }
     }
+    printf("%c",line[i]);
     w[j] = '\0';
     i++;
     if(line[i] == 'a'){

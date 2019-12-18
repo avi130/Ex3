@@ -31,4 +31,4 @@ sortmain.o: sortmain.c sort.h
 .PHONY: clean all mysort myfind
 
 clean:
-	rm -f *.o *.a *.so isort txtfind)
+	rm -f *.o *.a *.so isort txtfind

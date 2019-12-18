@@ -9,7 +9,7 @@
 
 
 int getLine(char s[]){
-    char x[Line];
+
     if (strlen(s)>250)
         return -1;
     int counter=0;
@@ -112,15 +112,14 @@ void print_lines(char *str)
 
     char find [64000];
     strcpy(find,str );
-    int findNum=getword(find);
+    getword(find);
 
     char newline[64000];
     strcpy(newline, str);
     int i = getLine(newline);
-    int x=0;
+
     while ( counter+i<totallength && linecounter<250)
     {
-
         counter+=i+1;
         str=str+i+1;
         strcpy(newline, str);
@@ -158,12 +157,11 @@ void print_similar_words(char *str)
 
     char find [64000];
     strcpy(find,str );
-    int findNum=getword(find);
+    getword(find);
 
     char newline[64000];
     strcpy(newline, str);
     int i = getLine(newline);
-    int x=0;
     while ( counter+i<totallength && linecounter<250)
     {
 

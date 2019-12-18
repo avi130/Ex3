@@ -6,11 +6,9 @@ int main() {
     //print_similar_words(q);
 
 
-
         char w[WORD];
         getword(w);
-         printf("%s",w);
-         char c;
+        printf("%c",w);char c;
         printf("please enter your command. a / b ");
         scanf(" %c", &c);
         printf("%c",c);

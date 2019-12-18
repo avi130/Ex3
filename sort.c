@@ -4,10 +4,6 @@
 
 #include "sort.h"
 
-
-
-//static int arr[50]={0};
-
 void shift_element(int *arr,int i ){
 
 

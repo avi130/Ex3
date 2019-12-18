@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "find.h"
+#include <string.h>
 int main() {
 
     //char q[]="cat b\n\nthis is a text file crat\nlooking for the word cat\nthe program should print also cats\nand crats and lcat but it shouldent\nprint the word caats";
@@ -21,16 +22,20 @@ int main() {
         else
             printf("there is no such commend.");
 */
-    char s[WORD];
-    char ch;
-    getword(s);
-    scanf(" %c",&ch);
-    if(ch == 'a'){
-        print_lines(s);
+    char op[WORD] = "";
+    char word[WORD] = "";
+
+    getword(word);
+    getword(op);
+
+    if (op[0] == 'a') {
+        print_lines(word);
     }
-    if(ch == 'b'){
-        print_similar_words(s);
+    else if (op[0] == 'b') {
+        print_similar_words(word);
     }
+    else
+        printf("wrong");
     return 0;
 
 

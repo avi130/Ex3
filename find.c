@@ -66,7 +66,7 @@ char downcase(char c){
 
 
 int substring(char *str1, char *str2){
-    int len=strlen(str2);
+    /*int len=strlen(str2);
     int i=0;
     while(*str1!='\0' && *str2 !='\0')
     {
@@ -81,7 +81,31 @@ int substring(char *str1, char *str2){
         i=0;
     }
     return 0;
-
+*/
+    int flag = 0;
+    int j = 0;
+    char *temp;
+    char *temp2;
+    for( int i = 0 ; i <LINE ; i++){
+        if(*str1 == *str2){
+            temp = str1;
+            temp2 = str2;
+            for(j = 0 ; j <strlen(str2) ; j++){
+                if(*temp == *temp2){
+                    temp++;
+                    temp2++;
+                }
+                else break;
+            }
+            temp2 = str2;
+            if(j == strlen(str2)){ // we finish to over all str2
+                flag = 1;
+                break;
+            }
+        }
+        str1++;
+    }
+    return flag;
 }
 
 int similar(char *str1, char *str2, int n)
@@ -175,7 +199,7 @@ void print_lines(char *str)
             }
         }
     }
-    
+
 }
 
 

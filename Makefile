@@ -18,8 +18,6 @@ main.o: main.c find.h
 
 
 
-
-
 isort: sortmain.o mysort
 	$(CC) $(FLAGS) -o isort sortmain.o libmySort.a
 mysort: libmySort.a
@@ -34,3 +32,4 @@ sortmain.o: sortmain.c sort.h
 
 clean:
 	rm -f *.o *.a *.so isort txtfind)
+	

@@ -2,8 +2,7 @@
 #include <stdio.h>
 #define SIZE 50
 
-int sortmain() {
-
+int main(){
 
         int arr[SIZE];
         printf("Please enter 50 numbers for the arr:\n");

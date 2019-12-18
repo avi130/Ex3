@@ -10,7 +10,7 @@ int main() {
         char w[WORD];
         int x=getword(w);
         getword(w+x);
-        char c;
+        printf("%s",w);
         printf("please enter your command. a / b ");
         scanf(" %c", &c);
 

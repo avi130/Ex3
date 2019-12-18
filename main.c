@@ -8,12 +8,11 @@ int main() {
 
 
         char w[WORD];
-        int x=getword(w);
-        getword(w+x);
-        printf("%s",w);
+        getword(w);
+
         printf("please enter your command. a / b ");
         scanf(" %c", &c);
-
+        printf("%c",c);
         if(c == 'b')
             print_similar_words(w);
 

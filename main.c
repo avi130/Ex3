@@ -9,7 +9,8 @@ int main() {
 
         char w[WORD];
         getword(w);
-    printf("%s",w);
+         printf("%s",w);
+         char c;
         printf("please enter your command. a / b ");
         scanf(" %c", &c);
         printf("%c",c);

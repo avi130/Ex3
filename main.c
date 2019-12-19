@@ -75,18 +75,18 @@ int main() {
     char line[LINE];
     char w[WORD];
     fgets(line,LINE , stdin);
+    
     int j = 0;
     int i = 0;
     for( i = 0 ; i<LINE ; i++){
-        if(line[i] != ' ' || line[i] != '\t' ){
+        if(line[i] == ' ' || line[i] == '\t' ){
+            break;
+        }
+        else{
             w[j] = line[i];
             j++;
         }
-        else{
-            break;
-        }
     }
-
     printf("%c",line[i]);
     w[j] = '\0';
     i++;

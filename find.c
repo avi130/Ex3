@@ -107,7 +107,6 @@ void print_lines(char *str)
 
             }
             else{
-                char *temp = myWord;
                 char *word=myLine;
                 if (similar(myWord, str , 1)){
                     printf("%s\n",word);

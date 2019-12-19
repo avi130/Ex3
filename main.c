@@ -3,6 +3,41 @@
 #include <string.h>
 int main() {
 
+    char w[6400];
+    int i=0;
+    w[i]=getchar();
+    while(i<6400 && w[i]!='\0')
+    {
+        i++;
+        w[i]=getchar();
+    }
+    char p[6400];
+    strcpy(p,w);
+   int x= getword(p);
+    strcpy(p,w);
+    int y= getword(p+x);
+
+    if(p!='a'&&p!='b')
+    {
+        return 0;
+    }
+    else if(p=='a')
+    {
+        print_lines(w);
+    }
+    else if(p=='b')
+    {
+        print_similar_words(w);
+    }
+    else{
+        printf("eror");
+    }
+
+
+
+
+
+
 /*
     char w[WORD];
     char option;
@@ -26,6 +61,7 @@ int main() {
     }
 
 */
+/*
     char line[LINE];
     char w[WORD];
     fgets(line,LINE , stdin);
@@ -51,4 +87,5 @@ int main() {
         print_similar_words(w);
     }
     return 0;
+    */
 }

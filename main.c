@@ -74,14 +74,13 @@ int main() {
 
     char line[LINE];
     char w[WORD];
-
     fgets(line,LINE , stdin);
     int j = 0;
     int i = 0;
     for( i = 0 ; i<LINE ; i++){
         if(line[i] != ' ' || line[i] != '\t' ){
-            w[i] = line[i];
-            //j++;
+            w[j] = line[i];
+            j++;
         }
         else{
             break;
@@ -89,7 +88,7 @@ int main() {
     }
 
     printf("%c",line[i]);
-    w[i] = '\0';
+    w[j] = '\0';
     i++;
     if(line[i] == 'a'){
         print_lines(w);

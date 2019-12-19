@@ -14,7 +14,7 @@ int main() {
         if(w[i]=='\n' && w[i-1]=='\n')
         {
             count++;
-            if(cout>1)
+            if(count>1)
                 break;
         }
     }

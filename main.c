@@ -5,13 +5,14 @@ int main() {
 
 
 
-    char myLine[LINE];
+
     char compare_Word[WORD];
+    char myLine[LINE];
     fgets(myLine,LINE , stdin);
     int i = 0;
-    for( i = 0 ; i<LINE ; i++)
+    for( i = 0; i< LINE; i++)
     {
-        if(myLine[i] != '\t' && myLine[i] != ' ' )
+        if((myLine[i] != '\t') && (myLine[i] != ' ' ))
         {
             compare_Word[i] = myLine[i];
         }
@@ -21,12 +22,11 @@ int main() {
     }
 
     compare_Word[i] = '\0';
-    i++;
-    if(myLine[i] == 'a')
+    if(myLine[i+1] =='a')
     {
         print_lines(compare_Word);
     }
-    else if(myLine[i] == 'b')
+    else if(myLine[i+1] =='b')
     {
         print_similar_words(compare_Word);
     }

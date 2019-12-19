@@ -220,16 +220,6 @@ void print_similar_words(char *str)
     strcpy(find,str );
     getWord(find);
 
-    char look [64000];
-    strcpy(look,str );
-    int i=0;
-    while(look[i]!=" ")
-    {
-      i++ ;
-    }
-    i++;
-    if(look[i]=='b' || look[i]==' b' || look[i]=='b ') {
-        printf("555");
 
         char newline[64000];
         strcpy(newline, str);

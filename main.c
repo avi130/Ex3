@@ -5,11 +5,18 @@ int main() {
 
     char w[6400];
     int i=0;
+    int count=0;
     w[i]=getchar();
-    while(i<6400 && w[i]!='\0' && w[i]!='\n')
+    while(i<6400 )
     {
         i++;
         w[i]=getchar();
+        if(w[i]=='\n' && w[i-1]=='\n')
+        {
+            count++;
+            if(cout>1)
+                break;
+        }
     }
     printf("%s\n",w);
     printf("start\n");

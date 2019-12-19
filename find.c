@@ -74,33 +74,6 @@ int substring(char *str1, char *str2){
         flag=0;
     }
     return 0;
-
-    /*
-    int flag = 0;
-    int j = 0;
-    char *temp;
-    char *temp2;
-    for( int i = 0 ; i <LINE ; i++){
-        if(*str1 == *str2){
-            temp = str1;
-            temp2 = str2;
-            for(j = 0 ; j <strlen(str2) ; j++){
-                if(*temp == *temp2){
-                    temp++;
-                    temp2++;
-                }
-                else break;
-            }
-            temp2 = str2;
-            if(j == strlen(str2)){ // we finish to over all str2
-                flag = 1;
-                break;
-            }
-        }
-        str1++;
-    }
-    return flag;
-*/
 }
 
 int similar(char *str1, char *str2, int n)
@@ -133,11 +106,11 @@ int similar(char *str1, char *str2, int n)
 
 void print_lines(char *str)
 {
+    int j=0;
     char s[LINE];
+    fgets(s, LINE , stdin);
     char w[WORD];
-    fgets(s, LINE , stdin); // to skip the second line
     while( fgets(s, LINE , stdin)){
-        int j=0;
         for(int i = 0 ; i < LINE && s[i] != '\n' ; i++){
             if( s[i] != ' ' && s[i] != '\n' && s[i] != '\t' && s[i] != '\0'){
                 w[j] = s[i];
@@ -159,13 +132,13 @@ void print_lines(char *str)
 
 void print_similar_words(char *str)
 {
+    int j=0;
     char myLine[LINE];
-    char myWord[WORD];
     fgets(myLine, LINE , stdin);
+    char myWord[WORD];
     while( fgets(myLine, LINE , stdin)){
-        int lenline = strlen(myLine);
-        int j=0;
-        for(int i = 0 ; i < lenline  ; i++){
+        int length = strlen(myLine);
+        for(int i = 0 ; i < length  ; i++){
             if( myLine[i] != ' ' && myLine[i] != '\n' && myLine[i] != '\t' && myLine[i] != '\0'){
                 myWord[j] = myLine[i];
                 j++;
@@ -177,7 +150,7 @@ void print_similar_words(char *str)
                     printf("%s\n",temp);
                 }
                 j=0;
-                memset(myWord , 0 , WORD); // reset the word
+                memset(myWord , 0 , WORD); 
             }
         }
     }

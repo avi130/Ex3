@@ -145,12 +145,16 @@ void print_lines(char *str)
     int x=getWord(find);//xxx
     printf("%d",x);
 
+
     char findcomand [64000];
     strcpy(findcomand,str );
     int y=getWord(findcomand+x);//xxx
     printf("%s\n",findcomand);
     if(findcomand=='a' || findcomand==' a' || findcomand=='a ') {
         printf("555");
+
+
+
         char newline[64000];
         strcpy(newline, str);
         int i = getLine(newline);
@@ -218,7 +222,7 @@ void print_similar_words(char *str)
 
     char findcomand [64000];
     strcpy(findcomand,str );
-    int y=getWord(findcomand+x);//xxx
+    int y=getWord(findcomand+3);//xxx
     printf("%s\n",findcomand);
     if(findcomand=='b' || findcomand==' b' || findcomand=='b ') {
         printf("555");

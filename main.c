@@ -21,9 +21,9 @@ int main() {
     printf("%s\n",w);
     printf("start\n");
     print_similar_words(w);
-    printf("aa");
+    printf("aa\n");
     print_lines(w);
-    printf("aa");
+    printf("aa\n");
 /*
     char p[265];
     if(p[0]!='a'&&p[0]!='b')

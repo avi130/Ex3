@@ -106,6 +106,7 @@ int similar(char *str1, char *str2, int n)
 
 void print_lines(char *str)
 {
+    /*
     int j=0;
     char s[LINE];
     fgets(s, LINE , stdin);
@@ -125,8 +126,31 @@ void print_lines(char *str)
             }
         }
     }
+    */
+    int j=0;
+    char myLine[LINE];
+    fgets(myLine, LINE , stdin);
+    char myWord[WORD];
+    while( fgets(myLine, LINE , stdin)){
+        int length = strlen(myLine);
+        for(int i = 0 ; i < length  ; i++){
+            if( myLine[i] != ' ' && myLine[i] != '\n' && myLine[i] != '\t' && myLine[i] != '\0'){
+                myWord[j] = myLine[i];
+                j++;
 
-
+            }
+            else{
+                char *temp = myWord;
+                char *word=myLine;
+                if (similar(myWord, str , 1)){
+                    printf("%s\n",word);
+                    break;
+                }
+                j=0;
+                memset(myWord , 0 , WORD);
+            }
+        }
+    }
 }
 
 
@@ -150,7 +174,7 @@ void print_similar_words(char *str)
                     printf("%s\n",temp);
                 }
                 j=0;
-                memset(myWord , 0 , WORD); 
+                memset(myWord , 0 , WORD);
             }
         }
     }

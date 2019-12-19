@@ -59,22 +59,23 @@ int getWord(char w[])
 
 
 int substring(char *str1, char *str2){
-    /*int len=strlen(str2);
-    int i=0;
-    while(*str1!='\0' && *str2 !='\0')
-    {
+    int len=strlen(str2);
+    int flag=0;
+    char *temp=str2;
+    for( int k = 0 ; k <LINE ; k++){
         while(*str1==*str2){
-            i++;
-            if(i==len)
+            flag++;
+            if(flag == len)
                 return 1;
             str2=str2+1;
             str1=str1+1;
         }
-        str2=str2-i;
-        i=0;
+        str2=temp;
+        flag=0;
     }
     return 0;
-     */
+
+    /*
     int flag = 0;
     int j = 0;
     char *temp;
@@ -99,7 +100,7 @@ int substring(char *str1, char *str2){
         str1++;
     }
     return flag;
-
+*/
 }
 
 int similar(char *str1, char *str2, int n)
@@ -132,57 +133,6 @@ int similar(char *str1, char *str2, int n)
 
 void print_lines(char *str)
 {
-    /*
-    int isSimilar;
-    char compareWord [256];
-    int compareSize=0;
-    int counter=0;
-    int counterWordInLine=0;
-    int totalLength=strlen(str);
-    int lineCounter=0;
-
-    char find [64000];
-    strcpy(find,str );
-    int x=getWord(find);//xxx
-    printf("%d",x);
-
-
-    char findcomand [64000];
-    strcpy(findcomand,str );
-    int y=getWord(findcomand+x);//xxx
-    printf("%s\n",findcomand);
-    if(findcomand=='a' || findcomand==' a' || findcomand=='a ') {
-        printf("555");
-
-
-
-        char newline[64000];
-        strcpy(newline, str);
-        int i = getLine(newline);
-
-        while (counter + i < totalLength && lineCounter < 250) {
-            counter += i + 1;
-            str = str + i + 1;
-            strcpy(newline, str);
-            i = getLine(newline);
-            counterWordInLine = 0;
-            while (counterWordInLine < i) {
-                strcpy(compareWord, newline + counterWordInLine);
-                compareSize = getWord(compareWord);
-                counterWordInLine += compareSize + 1;
-                isSimilar = similar(compareWord, find, 1);
-                if (isSimilar == 1) {
-                    printf("%s\n", newline);
-                    break;
-                }
-            }
-
-            strcpy(compareWord, newline);
-            lineCounter++;
-        }
-    }
-*/
-
     char s[LINE];
     char w[WORD];
     fgets(s, LINE , stdin); // to skip the second line
@@ -209,48 +159,6 @@ void print_lines(char *str)
 
 void print_similar_words(char *str)
 {
-    /*
-    int isSimilar;
-    char compareWord [256];
-    int compareSize=0;
-    int counter=0;
-    int counterWordInLine=0;
-    int totalLength=strlen(str);
-    int lineCounter=0;
-
-    char find [64000];
-    strcpy(find,str );
-    getWord(find);
-
-
-        char newline[64000];
-        strcpy(newline, str);
-        int i = getLine(newline);
-        while (counter + i < totalLength && lineCounter < 250) {
-
-            counter += i + 1;
-            str = str + i + 1;
-            strcpy(newline, str);
-            i = getLine(newline);
-
-            counterWordInLine = 0;
-            while (counterWordInLine < i) {
-                strcpy(compareWord, newline + counterWordInLine);
-                compareSize = getWord(compareWord);
-
-                counterWordInLine += compareSize + 1;
-                isSimilar = similar(compareWord, find, 1);
-                if (isSimilar == 1) {
-                    printf("%s\n", compareWord);
-                    break;
-                }
-            }
-            strcpy(compareWord, newline);
-            lineCounter++;
-        }
-    }
-*/
-
     char myLine[LINE];
     char myWord[WORD];
     fgets(myLine, LINE , stdin);

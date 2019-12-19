@@ -13,20 +13,14 @@ int main() {
     }
     printf("%s",w);
 
-    char c[6400];
-    strcpy(c,w);
-    int x= getWord(c);
-
-    printf("%s",c);
+    char c[265];
+    while(w[i]!='\0')
+    {
+       c[i]=w[i];
+    }
     printf("%s",w);
 
-    char p[6400];
-    strcpy(p,w);
-    int y= getWord(p);
-
-    printf("blabla");
-    printf("%s",p);
-
+    char p[265];
     if(p[0]!='a'&&p[0]!='b')
     {
         return 0;

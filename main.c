@@ -6,7 +6,7 @@ int main() {
     char w[6400];
     int i=0;
     w[i]=getchar();
-    while(i<6400 && w[i]!='\0')
+    while(i<6400 && w[i]!='\0' && w[i]!='\n')
     {
         i++;
         w[i]=getchar();

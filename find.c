@@ -132,6 +132,7 @@ int similar(char *str1, char *str2, int n)
 
 void print_lines(char *str)
 {
+    /*
     int isSimilar;
     char compareWord [256];
     int compareSize=0;
@@ -180,8 +181,8 @@ void print_lines(char *str)
             lineCounter++;
         }
     }
+*/
 
- /*
     char s[LINE];
     char w[WORD];
     fgets(s, LINE , stdin); // to skip the second line
@@ -201,13 +202,14 @@ void print_lines(char *str)
             }
         }
     }
-    */
+
 
 }
 
 
 void print_similar_words(char *str)
 {
+    /*
     int isSimilar;
     char compareWord [256];
     int compareSize=0;
@@ -247,8 +249,8 @@ void print_similar_words(char *str)
             lineCounter++;
         }
     }
+*/
 
-   /*
     char s[LINE];
     char w[WORD];
     fgets(s, LINE , stdin);
@@ -271,7 +273,7 @@ void print_similar_words(char *str)
             }
         }
     }
-    */
+
 }
 
 

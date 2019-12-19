@@ -2,7 +2,7 @@
 #include "find.h"
 #include <string.h>
 int main() {
-
+/*
     char w[6400];
     int i=0;
     int count=0;
@@ -24,6 +24,7 @@ int main() {
     printf("aa\n");
     print_lines(w);
     printf("aa\n");
+    */
 /*
     char p[265];
     if(p[0]!='a'&&p[0]!='b')
@@ -70,7 +71,7 @@ int main() {
     }
 
 */
-/*
+
     char line[LINE];
     char w[WORD];
     fgets(line,LINE , stdin);
@@ -96,5 +97,5 @@ int main() {
         print_similar_words(w);
     }
     return 0;
-    */
+
 }

@@ -14,13 +14,17 @@ int main() {
     printf("%s",w);
 
     char c[265];
-    while(w[i]!='\0')
+    int x=0;
+    c[0]=w[0];
+    while(w[x]!='\0')
     {
-       c[i]=w[i];
+        x++;
+       c[x]=w[x];
+
     }
     printf("%s",w);
     printf("blat");
-    printf("%s",c);
+
 
 /*
     char p[265];

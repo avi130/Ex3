@@ -11,22 +11,10 @@ int main() {
         i++;
         w[i]=getchar();
     }
-    printf("%s",w);
-
-    char c[265];
-    int x=0;
-    *(c+x)=*(w+x);
-    while(*(w+x)!='\0')
-    {
-        x++;
-        *(c+x)=*(w+x);
-
-    }
-
     printf("%s\n",w);
-    printf("blat\n");
-    printf("%s\n",c);
-
+    printf("start\n");
+    print_similar_words(w);
+    print_lines(w);
 
 /*
     char p[265];

@@ -8,7 +8,7 @@
 
 
 int getLine(char s[]){
-/*
+
     if (strlen(s)>LINE)
         return -1;
     int counter=0;
@@ -22,7 +22,8 @@ int getLine(char s[]){
 
     s[counter]='\0';
     return counter;
-    */
+
+/*
     int i=0;
     char ch=getchar();
     while(s[i]!='\n' && s[i] !='\0'){
@@ -32,6 +33,7 @@ int getLine(char s[]){
     }
     s[i+1]='\0';
     return i;
+    */
 }
 
 
@@ -140,34 +142,37 @@ void print_lines(char *str)
 
     char find [64000];
     strcpy(find,str );
-    getWord(find);
+    int x=getWord(find);//xxx
 
-    char newline[64000];
-    strcpy(newline, str);
-    int i = getLine(newline);
+    char findcomand [64000];
+    strcpy(findcomand,str );
+    int y=getWord(findcomand+x);//xxx
+    if(findcomand=='a') {
 
-    while ( counter+i<totalLength && lineCounter<250)
-    {
-        counter+=i+1;
-        str=str+i+1;
+        char newline[64000];
         strcpy(newline, str);
-        i = getLine(newline);
-        counterWordInLine=0;
-        while(counterWordInLine<i)
-        {
-            strcpy(compareWord,newline+counterWordInLine);
-            compareSize=getWord(compareWord);
-            counterWordInLine+=compareSize+1;
-            isSimilar=similar(compareWord,find,1);
-            if(isSimilar==1)
-            {
-                printf("%s\n", newline);
-                break;
-            }
-        }
+        int i = getLine(newline);
 
-        strcpy(compareWord,newline);
-        lineCounter++;
+        while (counter + i < totalLength && lineCounter < 250) {
+            counter += i + 1;
+            str = str + i + 1;
+            strcpy(newline, str);
+            i = getLine(newline);
+            counterWordInLine = 0;
+            while (counterWordInLine < i) {
+                strcpy(compareWord, newline + counterWordInLine);
+                compareSize = getWord(compareWord);
+                counterWordInLine += compareSize + 1;
+                isSimilar = similar(compareWord, find, 1);
+                if (isSimilar == 1) {
+                    printf("%s\n", newline);
+                    break;
+                }
+            }
+
+            strcpy(compareWord, newline);
+            lineCounter++;
+        }
     }
 
  /*
@@ -191,6 +196,7 @@ void print_lines(char *str)
         }
     }
     */
+
 }
 
 
@@ -206,35 +212,39 @@ void print_similar_words(char *str)
 
     char find [64000];
     strcpy(find,str );
-    getWord(find);
+    int x=getWord(find);
 
-    char newline[64000];
-    strcpy(newline, str);
-    int i = getLine(newline);
-    while ( counter+i<totalLength && lineCounter<250)
-    {
+    char findcomand [64000];
+    strcpy(findcomand,str );
+    int y=getWord(findcomand+x);//xxx
+    if(findcomand=='a') {
 
-        counter+=i+1;
-        str=str+i+1;
+
+        char newline[64000];
         strcpy(newline, str);
-        i = getLine(newline);
+        int i = getLine(newline);
+        while (counter + i < totalLength && lineCounter < 250) {
 
-        counterWordInLine=0;
-        while(counterWordInLine<i)
-        {
-            strcpy(compareWord,newline+counterWordInLine);
-            compareSize=getWord(compareWord);
+            counter += i + 1;
+            str = str + i + 1;
+            strcpy(newline, str);
+            i = getLine(newline);
 
-            counterWordInLine+=compareSize+1;
-            isSimilar=similar(compareWord,find,1);
-            if(isSimilar==1)
-            {
-                printf("%s\n", compareWord);
-                break;
+            counterWordInLine = 0;
+            while (counterWordInLine < i) {
+                strcpy(compareWord, newline + counterWordInLine);
+                compareSize = getWord(compareWord);
+
+                counterWordInLine += compareSize + 1;
+                isSimilar = similar(compareWord, find, 1);
+                if (isSimilar == 1) {
+                    printf("%s\n", compareWord);
+                    break;
+                }
             }
+            strcpy(compareWord, newline);
+            lineCounter++;
         }
-        strcpy(compareWord,newline);
-        lineCounter++;
     }
 
    /*

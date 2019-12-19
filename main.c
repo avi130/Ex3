@@ -11,6 +11,7 @@ int main() {
         i++;
         w[i]=getchar();
     }
+    printf("%s",w);
     char p[6400];
     strcpy(p,w);
    int x= getWord(p);

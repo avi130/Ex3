@@ -8,7 +8,8 @@ int main() {
     char myLine[LINE];
     char compare_Word[WORD];
     fgets(myLine,LINE , stdin);
-    for(int i = 0 ; i<LINE ; i++)
+    int i = 0;
+    for( i = 0 ; i<LINE ; i++)
     {
         if(myLine[i] != '\t' && myLine[i] != ' ' )
         {

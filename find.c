@@ -251,25 +251,29 @@ void print_similar_words(char *str)
     }
 */
 
-    char s[LINE];
-    char w[WORD];
-    fgets(s, LINE , stdin);
-    while( fgets(s, LINE , stdin)){
-        int lenline = strlen(s);
+    char myLine[LINE];
+    char myWord[WORD];
+    int count=0;
+    fgets(myLine, LINE , stdin);
+    while( fgets(myLine, LINE , stdin)){
+        int lenline = strlen(myLine);
         int j=0;
         for(int i = 0 ; i < lenline  ; i++){
-            if( s[i] != ' ' && s[i] != '\n' && s[i] != '\t' && s[i] != '\0'){
-                w[j] = s[i];
+            if( myLine[i] != ' ' && myLine[i] != '\n' && myLine[i] != '\t' && myLine[i] != '\0'){
+                myWord[j] = myLine[i];
                 j++;
 
             }
             else{
-                char *temp = w;
-                if (similar(w, str , 1)){
-                    printf("%s\n",temp);
+                if(count!=0) {
+                    char *temp = myWord;
+                    if (similar(myWord, str, 1)) {
+                        printf("%s\n", temp);
+                    }
+                    j = 0;
+                    memset(myWord, 0, WORD); // reset the word
                 }
-                j=0;
-                memset(w , 0 , WORD); // reset the word
+                count++;
             }
         }
     }

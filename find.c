@@ -22,18 +22,6 @@ int getLine(char s[]){
 
     s[counter]='\0';
     return counter;
-
-/*
-    int i=0;
-    char ch=getchar();
-    while(s[i]!='\n' && s[i] !='\0'){
-        s[i]=ch;
-        i++;
-        ch=getchar();
-    }
-    s[i+1]='\0';
-    return i;
-    */
 }
 
 
@@ -106,27 +94,6 @@ int similar(char *str1, char *str2, int n)
 
 void print_lines(char *str)
 {
-    /*
-    int j=0;
-    char s[LINE];
-    fgets(s, LINE , stdin);
-    char w[WORD];
-    while( fgets(s, LINE , stdin)){
-        for(int i = 0 ; i < LINE && s[i] != '\n' ; i++){
-            if( s[i] != ' ' && s[i] != '\n' && s[i] != '\t' && s[i] != '\0'){
-                w[j] = s[i];
-                j++;
-            }
-            else {
-                if(substring(w,str)){
-                    printf("%s",s);
-                    break;
-                }
-                j=0;
-            }
-        }
-    }
-    */
     int j=0;
     char myLine[LINE];
     fgets(myLine, LINE , stdin);

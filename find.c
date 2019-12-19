@@ -253,7 +253,6 @@ void print_similar_words(char *str)
 
     char myLine[LINE];
     char myWord[WORD];
-    int count=0;
     fgets(myLine, LINE , stdin);
     while( fgets(myLine, LINE , stdin)){
         int lenline = strlen(myLine);
@@ -265,15 +264,12 @@ void print_similar_words(char *str)
 
             }
             else{
-                if(count!=0) {
-                    char *temp = myWord;
-                    if (similar(myWord, str, 1)) {
-                        printf("%s\n", temp);
-                    }
-                    j = 0;
-                    memset(myWord, 0, WORD); // reset the word
+                char *temp = myWord;
+                if (similar(myWord, str , 1)){
+                    printf("%s\n",temp);
                 }
-                count++;
+                j=0;
+                memset(myWord , 0 , WORD); // reset the word
             }
         }
     }

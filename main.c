@@ -2,100 +2,34 @@
 #include "find.h"
 #include <string.h>
 int main() {
-/*
-    char w[6400];
-    int i=0;
-    int count=0;
-    w[i]=getchar();
-    while(i<6400 )
+
+
+
+    char myLine[LINE];
+    char compare_Word[WORD];
+    fgets(myLine,LINE , stdin);
+    for(int i = 0 ; i<LINE ; i++)
     {
-        i++;
-        w[i]=getchar();
-        if(w[i]=='\n' && w[i-1]=='\n')
+        if(myLine[i] != '\t' && myLine[i] != ' ' )
         {
-            count++;
-            if(count>1)
-                break;
-        }
-    }
-    printf("%s\n",w);
-    printf("start\n");
-    print_similar_words(w);
-    printf("aa\n");
-    print_lines(w);
-    printf("aa\n");
-    */
-/*
-    char p[265];
-    if(p[0]!='a'&&p[0]!='b')
-    {
-        return 0;
-    }
-    else if(p[0]=='a')
-    {
-        print_lines(w);
-    }
-    else if(p[0]=='b')
-    {
-        print_similar_words(w);
-    }
-    else{
-        printf("%c",p[0]);
-    }
-*/
-
-
-
-
-
-/*
-    char w[WORD];
-    char option;
-    getLine(w);
-    printf("%s\n",w);
-
-    option=getchar();
-    printf("%s\n",w);
-    printf("%c",option);
-    if(option!='a'&&option!='b')
-    {
-        return 0;
-    }
-    if(option=='a')
-    {
-        print_lines(w);
-    }
-    if(option=='b')
-    {
-        print_similar_words(w);
-    }
-
-*/
-
-    char line[LINE];
-    char w[WORD];
-    fgets(line,LINE , stdin);
-
-   // int j = 0;
-    int i = 0;
-    for( i = 0 ; i<LINE ; i++){
-        if(line[i] == ' ' || line[i] == '\t' ){
-            break;
+            compare_Word[i] = myLine[i];
         }
         else{
-            w[i] = line[i];
-           // j++;
+            break;
         }
     }
-    printf("%c",line[i]);
-    w[i] = '\0';
-    i++;
-    if(line[i] == 'a'){
-        print_lines(w);
-    }
-    if(line[i] == 'b'){
-        print_similar_words(w);
-    }
-    return 0;
 
+    compare_Word[i] = '\0';
+    i++;
+    if(myLine[i] == 'a')
+    {
+        print_lines(compare_Word);
+    }
+    else if(myLine[i] == 'b')
+    {
+        print_similar_words(compare_Word);
+    }
+
+
+    return 0;
 }

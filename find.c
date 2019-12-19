@@ -218,13 +218,14 @@ void print_similar_words(char *str)
 
     char find [64000];
     strcpy(find,str );
-    int x=getWord(find);
-
-    char findcomand [64000];
-    strcpy(findcomand,str );
-    int y=getWord(*(findcomand+3));//xxx
-    printf("%s\n",findcomand);
-    if(findcomand=='b' || findcomand==' b' || findcomand=='b ') {
+    getWord(find);
+    int i=0;
+    while(*(str+i)!=" ")
+    {
+      i++ ;
+    }
+    i++;
+    if(*(str+i)=='b' || *(str+i)==' b' || *(str+i)=='b ') {
         printf("555");
 
         char newline[64000];

@@ -13,24 +13,24 @@ int main() {
     }
     char p[6400];
     strcpy(p,w);
-   int x= getword(p);
+   int x= getWord(p);
     strcpy(p,w);
-    int y= getword(p+x);
+    int y= getWord(p+x);
 
-    if(p!='a'&&p!='b')
+    if(p[0]!='a'&&p[0]!='b')
     {
         return 0;
     }
-    else if(p=='a')
+    else if(p[0]=='a')
     {
         print_lines(w);
     }
-    else if(p=='b')
+    else if(p[0]=='b')
     {
         print_similar_words(w);
     }
     else{
-        printf("%S",p);
+        printf("%c",p[0]);
     }
 
 

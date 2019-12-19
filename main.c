@@ -19,7 +19,10 @@ int main() {
        c[i]=w[i];
     }
     printf("%s",w);
+    printf("blat");
+    printf("%s",c);
 
+/*
     char p[265];
     if(p[0]!='a'&&p[0]!='b')
     {
@@ -36,7 +39,7 @@ int main() {
     else{
         printf("%c",p[0]);
     }
-
+*/
 
 
 

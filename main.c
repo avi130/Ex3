@@ -12,12 +12,16 @@ int main() {
         w[i]=getchar();
     }
     printf("%s",w);
+
+    char c[6400];
+    strcpy(c,w);
+    int x= getWord(c);
+
     char p[6400];
     strcpy(p,w);
-   int x= getWord(p);
-    strcpy(p,w);
     int y= getWord(p+x);
-
+    printf("%s",p);
+    printf("blabla");
     if(p[0]!='a'&&p[0]!='b')
     {
         return 0;

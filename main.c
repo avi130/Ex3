@@ -15,15 +15,17 @@ int main() {
 
     char c[265];
     int x=0;
-    c[0]=w[0];
-    while(w[x]!='\0')
+    *(c+x)=*(w+x);
+    while(*(w+x)!='\0')
     {
         x++;
-       c[x]=w[x];
+        *(c+x)=*(w+x);
 
     }
-    printf("%s",w);
-    printf("blat");
+
+    printf("%s\n",w);
+    printf("blat\n");
+    printf("%s\n",c);
 
 
 /*

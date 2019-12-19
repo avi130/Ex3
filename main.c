@@ -17,11 +17,16 @@ int main() {
     strcpy(c,w);
     int x= getWord(c);
 
+    printf("%s",c);
+    printf("%s",w);
+
     char p[6400];
     strcpy(p,w);
-    int y= getWord(p+x);
-    printf("%s",p);
+    int y= getWord(p);
+
     printf("blabla");
+    printf("%s",p);
+
     if(p[0]!='a'&&p[0]!='b')
     {
         return 0;

@@ -30,7 +30,7 @@ int main() {
         print_similar_words(w);
     }
     else{
-        printf("eror");
+        printf("%S",p);
     }
 
 
